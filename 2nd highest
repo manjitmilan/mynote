@@ -1,0 +1,46 @@
+l=['abc','ab','b','b','abcd','abcdef','abe','a','abcde','werfg']
+
+
+
+def find_max_of_2(l,k):
+    max=0
+    # for i in range(0,len(l)):
+    #     for j in range(0,len(l)):
+    #         if len(l[i])>len(l[j]):
+    #             if max < len(l[i]):
+    #                 max=len(l[i])
+    #             l[i],l[j]=l[j],l[i]
+    # print(l,max-k+1)
+    for i in range(0,len(l)):
+        if max < len(l[i]):
+            max=len(l[i])
+    for j in l :
+        if len(j)== max-k+1:
+            print(j)
+    else:
+        print(f'no {k} th value in list')
+
+
+
+find_max_of_2(l,2)
+
+
+
+#
+# def find_max_of_2(l,k):
+#     max=0
+#     for i in range(0,len(l)):
+#         for j in range(0,len(l)):
+#             if len(l[i])>len(l[j]):
+#                 if max < len(l[i]):
+#                     max=len(l[i])
+#                 l[i],l[j]=l[j],l[i]
+#     print(l,max-k+1)
+#     for i in l:
+#         if len(i)==max-k+1:
+#             print(i)
+#         else:
+#             print(f'no {k} th value in string')
+#             exit()
+#
+# find_max_of_2(l,1)
