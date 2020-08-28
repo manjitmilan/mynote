@@ -1,3 +1,26 @@
+genda
+
+l=['abcd','abcdef','abc','ab','abcde']
+
+
+
+def find_max_of_2(l,k):
+    max=0
+    for i in range(0,len(l)):
+        if max < len(l[i]):
+            max=len(l[i])
+    for j in l :
+        if len(j)== max-k+1:
+            print(j)
+    else:
+        print(f'no {k} th value in list')
+
+
+find_max_of_2(l,2)
+
+
+
+
 l=['abc','ab','b','b','abcd','abcdef','abe','a','abcde','werfg']
 
 
