@@ -1,328 +1,96 @@
-<?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Bus_VehicleControl</groupId>
-  <artifactId>VehicleControl</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>VehicleControl</name>
-  <url>http://maven.apache.org</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>27.0.1-jre</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>3.141.59</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>6.14.3</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-ooxml</artifactId>
-      <version>3.9</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>2.19.1</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.relevantcodes</groupId>
-      <artifactId>extentreports</artifactId>
-      <version>2.41.2</version>
-      <scope>compile</scope>
-    </dependency>
-  </dependencies>
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </pluginRepository>
-  </pluginRepositories>
-  <build>
-    <sourceDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\src\main\java</sourceDirectory>
-    <scriptSourceDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\src\main\scripts</scriptSourceDirectory>
-    <testSourceDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\src\test\java</testSourceDirectory>
-    <outputDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\target\classes</outputDirectory>
-    <testOutputDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\target\test-classes</testOutputDirectory>
-    <resources>
-      <resource>
-        <filtering>true</filtering>
-        <directory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\src\main\resources</directory>
-      </resource>
-    </resources>
-    <testResources>
-      <testResource>
-        <directory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\src\test\resources</directory>
-      </testResource>
-    </testResources>
-    <directory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\target</directory>
-    <finalName>VehicleControl-0.0.1-SNAPSHOT</finalName>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.3</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.2-beta-5</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.8</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.3.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <executions>
-          <execution>
-            <id>default-compile</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-            <configuration>
-              <source>${jdk.level}</source>
-              <target>${jdk.level}</target>
-            </configuration>
-          </execution>
-          <execution>
-            <id>default-testCompile</id>
-            <phase>test-compile</phase>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-            <configuration>
-              <source>${jdk.level}</source>
-              <target>${jdk.level}</target>
-            </configuration>
-          </execution>
-        </executions>
-        <configuration>
-          <source>${jdk.level}</source>
-          <target>${jdk.level}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.19.1</version>
-        <executions>
-          <execution>
-            <id>default-test</id>
-            <phase>test</phase>
-            <goals>
-              <goal>test</goal>
-            </goals>
-            <configuration>
-              <forkCount>0</forkCount>
-              <useSystemClassLoader>false</useSystemClassLoader>
-              <suiteXmlFiles>
-                <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
-              </suiteXmlFiles>
-              <includes>
-                <include>**/*Test.class</include>
-                <include>**/*test.class</include>
-              </includes>
-            </configuration>
-          </execution>
-        </executions>
-        <configuration>
-          <forkCount>0</forkCount>
-          <useSystemClassLoader>false</useSystemClassLoader>
-          <suiteXmlFiles>
-            <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-          <includes>
-            <include>**/*Test.class</include>
-            <include>**/*test.class</include>
-          </includes>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>2.5</version>
-        <executions>
-          <execution>
-            <id>default-clean</id>
-            <phase>clean</phase>
-            <goals>
-              <goal>clean</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
-        <executions>
-          <execution>
-            <id>default-testResources</id>
-            <phase>process-test-resources</phase>
-            <goals>
-              <goal>testResources</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>default-resources</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>resources</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>default-jar</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>default-install</id>
-            <phase>install</phase>
-            <goals>
-              <goal>install</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.7</version>
-        <executions>
-          <execution>
-            <id>default-deploy</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.3</version>
-        <executions>
-          <execution>
-            <id>default-site</id>
-            <phase>site</phase>
-            <goals>
-              <goal>site</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\target\site</outputDirectory>
-              <reportPlugins>
-                <reportPlugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-project-info-reports-plugin</artifactId>
-                </reportPlugin>
-              </reportPlugins>
-            </configuration>
-          </execution>
-          <execution>
-            <id>default-deploy</id>
-            <phase>site-deploy</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\target\site</outputDirectory>
-              <reportPlugins>
-                <reportPlugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-project-info-reports-plugin</artifactId>
-                </reportPlugin>
-              </reportPlugins>
-            </configuration>
-          </execution>
-        </executions>
-        <configuration>
-          <outputDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\target\site</outputDirectory>
-          <reportPlugins>
-            <reportPlugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-            </reportPlugin>
-          </reportPlugins>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-  <reporting>
-    <outputDirectory>C:\Users\Manjit\workspace\VehicleControl\VehicleControl\target\site</outputDirectory>
-  </reporting>
-</project>
+package com.perfecto.sampleproject;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.SessionNotCreatedException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import com.perfecto.reportium.client.ReportiumClient;
+import com.perfecto.reportium.client.ReportiumClientFactory;
+import com.perfecto.reportium.model.Job;
+import com.perfecto.reportium.model.PerfectoExecutionContext;
+import com.perfecto.reportium.model.Project;
+import com.perfecto.reportium.test.TestContext;
+import com.perfecto.reportium.test.result.TestResult;
+import com.perfecto.reportium.test.result.TestResultFactory;
+
+import io.appium.java_client.AppiumDriver;
+
+public class PerfectoAppium {
+	RemoteWebDriver driver;
+	ReportiumClient reportiumClient;
+
+	@Test
+	public void appiumTest() throws Exception {
+		//Replace <<cloud name>> with your perfecto cloud name (e.g. demo) or pass it as maven properties: -DcloudName=<<cloud name>>  
+		String cloudName = "gs";
+		//Replace <<security token>> with your perfecto security token or pass it as maven properties: -DsecurityToken=<<SECURITY TOKEN>>  More info: https://developers.perfectomobile.com/display/PD/Generate+security+tokens
+		String securityToken = "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMTU3OGQ1NC1iMDk5LTQyZDgtYWNkZi1jZGY0MWIyZDRiMDcifQ.eyJqdGkiOiJkMGE2MTA5Mi0xZDNiLTRlMGUtYTM0OS1iNjhmZTgwOTE5MjUiLCJleHAiOjAsIm5iZiI6MCwiaWF0IjoxNTg4Mjc2OTkzLCJpc3MiOiJodHRwczovL2F1dGgucGVyZmVjdG9tb2JpbGUuY29tL2F1dGgvcmVhbG1zL2dzLXBlcmZlY3RvbW9iaWxlLWNvbSIsImF1ZCI6Imh0dHBzOi8vYXV0aC5wZXJmZWN0b21vYmlsZS5jb20vYXV0aC9yZWFsbXMvZ3MtcGVyZmVjdG9tb2JpbGUtY29tIiwic3ViIjoiYzQzOTE5ZWMtOGI4NS00ZTA4LTk5NWEtMjZkYTM2YjIwYzU4IiwidHlwIjoiT2ZmbGluZSIsImF6cCI6Im9mZmxpbmUtdG9rZW4tZ2VuZXJhdG9yIiwibm9uY2UiOiJmNDQwYTRlYS02Yjc1LTRiNzMtODg5ZC01ZTUyNWZmYTQ2YzgiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiIzMDVlOTg2ZS03YTEzLTRhZGMtYTEyYi1hMjBiNWEyMTY2OTUiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIG9mZmxpbmVfYWNjZXNzIn0.T78Z_dVv5tYy4EjYP0IB5T2XIIOXnguxuulkUvardNg";
+
+		//A sample perfecto connect appium script to connect with a perfecto android device and perform addition validation in calculator app.
+		String browserName = "mobileOS";
+		DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
+		capabilities.setCapability("securityToken", Utils.fetchSecurityToken(securityToken));
+		//capabilities.setCapability("model", "iPhone-XS Max");
+		capabilities.setCapability("enableAppiumBehavior", true);
+		capabilities.setCapability("openDeviceTimeout", 2);
+		capabilities.setCapability("appPackage", "com.android.settings");
+		capabilities.setCapability("appActivity", "com.android.settings.Settings");
+		//DesiredCapabilities capabilities = new DesiredCapabilities("", "", Platform.ANY);
+		capabilities.setCapability("platformName", "iOS");
+		capabilities.setCapability("platformV"
+				+ "ersion", "13.4");
+		capabilities.setCapability("location", "NA-US-PHX");
+		capabilities.setCapability("resolution", "1242x2688");
+		capabilities.setCapability("manufacturer", "Apple");
+		capabilities.setCapability("model", "iPhone-XS Max");
+		try{
+			driver = (RemoteWebDriver)(new AppiumDriver<>(new URL("https://" + Utils.fetchCloudName(cloudName)  + ".perfectomobile.com/nexperience/perfectomobile/wd/hub"), capabilities)); 
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		}catch(SessionNotCreatedException e){
+			throw new RuntimeException("Driver not created with capabilities: " + capabilities.toString());
+		}
+
+		reportiumClient = Utils.setReportiumClient(driver, reportiumClient); //Creates reportiumClient
+		reportiumClient.testStart("My Settings Test", new TestContext("tag2", "tag3")); //Starts the reportium test
+
+		reportiumClient.stepStart("Verify Settings App is loaded"); //Starts a reportium step
+		driver.findElement(By.xpath("//*[contains(@resource-id,':id/collpasing_app_bar_extended_title') or contains(@resource-id,'settings:id/search')] | //*[contains(@text,'Search')]")).isDisplayed();
+		reportiumClient.stepEnd(); //Stops a reportium step
+
+		reportiumClient.stepStart("Verify Data usage validation");
+		driver.findElement(By.xpath("//*[contains(@text,'Data usage')]")).click();
+		WebElement data = driver.findElement(By.xpath("//*[contains(@resource-id, 'action_bar')]//*[@text='Data usage']"));
+		Utils.assertText(data, reportiumClient, "Data usage");
+		reportiumClient.stepEnd();
+	}
+
+	@AfterMethod
+	public void afterMethod(ITestResult result) {
+		TestResult testResult = null;
+		if(result.getStatus() == result.SUCCESS) {
+			testResult = TestResultFactory.createSuccess();
+		}
+		else if (result.getStatus() == result.FAILURE) {
+			testResult = TestResultFactory.createFailure(result.getThrowable());
+		}
+		reportiumClient.testStop(testResult);
+
+		driver.close();
+		driver.quit();
+		// Retrieve the URL to the DigitalZoom Report 
+		String reportURL = reportiumClient.getReportUrl();
+		System.out.println(reportURL);
+	}
+
+
+
+}
+
